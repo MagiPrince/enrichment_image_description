@@ -1,0 +1,75 @@
+section {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.btn-submit {
+    margin-top: 20px;
+    margin-right: -12.5% !important;
+    float: right;
+    margin-bottom: 200px;
+}
+
+form {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+h2 {
+    margin-bottom: 40px;
+}
+
+.mybreadcrum {
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.fa-times-circle {
+    padding-bottom: 3px;
+    margin-left: 5px;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.card {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.btn-secondary {
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.btn-info {
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.btn-visualizer {
+    margin-right: 12.5%;
+}
+
+.align-input-group {
+    margin-top: 20px;
+    margin-left: 12.5%;
+}
+
+.restart {
+    margin-top: 20px;
+    float: right;
+    margin-right: 12.5%;
+    margin-bottom: 200px;
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Enrichissement de description d'image</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/basic.css' %}">
+        <link rel="stylesheet" href="/static/lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <script src="/static/lib/fontawesome/fontawesome.js" crossorigin="anonymous"></script>
+        <script src="/static/lib/bootstrap/js/bootstrap.bundle.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    </head>
+
+    <body>
+        {% include 'navbar.html' %}
+        
+        <div class="mybreadcrum" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Visualiseur</li>
+            </ol>
+        </div>
+        <section class="center">
+            <h2 class="text-center">Enrichissez les tags de vos postes Flickr grâce à DoggOntology</h2>
+            <img src="{{ url }}" class="img-fluid" alt="Responsive image" style="width:75%">
+            <div class="card" style="width:75%">
+                <div class="card-body" id="button-tags"></div>
+            </div>
+
+            <div class="input-group mb-3 align-input-group" style="width:75%">
+                <input type="text" class="form-control" id="inputText" placeholder="Tag à ajouter" aria-label="addTag">
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-success" onclick="addTagToList(this)">Ajouter</button>
+                </div>
+            </div>
+
+
+            {% if latitude != '' and longitude != '' %}
+
+            
+                <div id="map" class="align-input-group" style="width:75%; height:400px;"></div>
+                <script>
+                    // initialize Leaflet
+                    var map = L.map('map').setView([{{ latitude|safe }}, {{ longitude|safe }}], 10);
+
+                    // add the OpenStreetMap tiles
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        maxZoom: 19,
+                        attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+                    }).addTo(map);
+
+                    // show the scale bar on the lower left corner
+                    L.control.scale({imperial: true, metric: true}).addTo(map);
+
+                    // show a marker on the map
+                    L.marker([{{ latitude|safe }}, {{ longitude|safe }}]).addTo(map);
+                </script>
+
+            {% endif %}
+
+
+
+            <form action="/results/" method="POST">
+                {% csrf_token %}
+                <div>
+                    <input class="btn btn-primary btn-submit btn-visualizer" onclick="prepareData(this)" type="submit" value="Enrichir">
+                </div>
+            </form>
+            
+            
+        </section>
+    </body>
+    <script>
+        var tagsArray = {{ tags|safe }};
+        var buttonTagsDiv = document.getElementById('button-tags');
+
+        for (let i = 0; i < tagsArray.length; i++) {
+            var button = document.createElement("BUTTON");
+            button.className = "btn btn-secondary"
+            button.innerHTML = tagsArray[i] + "<i class='fas fa-times-circle'></i>";
+            button.setAttribute("onclick","deleteTagFromList(this)");
+            buttonTagsDiv.appendChild(button);
+        }
+
+        function addTagToList(e) {
+            var valInput = e.parentElement.parentElement.querySelector('.form-control').value
+            if(valInput != '' && tagsArray.indexOf(valInput) === -1){
+                tagsArray.push(valInput)
+
+                var button = document.createElement("BUTTON");
+                button.className = "btn btn-secondary"
+                button.innerHTML = valInput + "<i class='fas fa-times-circle'></i>";
+                button.setAttribute("onclick","deleteTagFromList(this)");
+                buttonTagsDiv.appendChild(button);
+            }
+
+            e.parentElement.parentElement.querySelector('.form-control').value = ''
+        }
+
+        function deleteTagFromList(e) {
+            var index = tagsArray.indexOf(String(e.textContent));
+            if (index !== -1) {
+                tagsArray.splice(index, 1);
+            }
+            e.remove()
+        }
+
+        $('#inputText').on('keypress', function(event){
+            var code = event.keyCode || event.which;
+            if(code == 13){ 
+                addTagToList(this)
+            }
+        });
+
+        function prepareData(e) {
+            var parent = e.parentElement;
+
+            // Make sure that a precedent hidden input has not be already created
+            // If it is the case, it will erase them and create a new one
+            var elements = parent.getElementsByClassName("tag");
+
+            while (elements[0]) {
+                elements[0].parentNode.removeChild(elements[0]);
+            }
+
+            for (let i = 0; i < tagsArray.length; i++) {
+                var input = document.createElement("input");
+                input.setAttribute("type", "hidden");
+                input.setAttribute("name", "tag");
+                input.classList.add('tag');
+                input.setAttribute("value", tagsArray[i]);
+                parent.appendChild(input)
+            }
+        }
+
+    </script>
+</html>

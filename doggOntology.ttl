@@ -1,0 +1,957 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology> a owl:Ontology .
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#does> a owl:ObjectProperty .
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#fieldOfWork> a owl:ObjectProperty .
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#livesIn> a owl:ObjectProperty .
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#usedFor> a owl:ObjectProperty .
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#appearsIn>
+  a owl:DatatypeProperty ;
+  rdfs:subPropertyOf owl:topDataProperty .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#comesFrom>
+  a owl:DatatypeProperty ;
+  rdfs:subPropertyOf owl:topDataProperty .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#consistOf> a owl:DatatypeProperty .
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> a owl:DatatypeProperty .
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> a owl:DatatypeProperty .
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasColor> a owl:DatatypeProperty .
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> a owl:DatatypeProperty .
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasProperty> a owl:DatatypeProperty .
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasSemanticField> a owl:DatatypeProperty .
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasValue>
+  a owl:DatatypeProperty ;
+  rdfs:subPropertyOf owl:topDataProperty .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> a owl:DatatypeProperty .
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#isA> a owl:DatatypeProperty .
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#triggers> a owl:DatatypeProperty .
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#uses> a owl:DatatypeProperty .
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Animal>
+  a owl:Class ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Animal"
+  ] ;
+  owl:disjointWith <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Assistance>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Camouflage>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Chasing>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Hunting>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Racing>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Security>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Sled>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Snow>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Tracking>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Weapon> .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Assistance>
+  a owl:Class ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Assistance"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasSemanticField> ;
+    owl:hasValue "Aide"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasSemanticField> ;
+    owl:hasValue "Assistant"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasSemanticField> ;
+    owl:hasValue "Help"
+  ] ;
+  owl:disjointWith <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Camouflage>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Chasing>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Hunting>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Racing>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Security>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Sled>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Snow>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Tracking>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Weapon> .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#AssistanceDog>
+  a owl:Class ;
+  owl:equivalentClass <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#ServiceDog> ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#ServiceAnimal>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#WorkingDog>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#fieldOfWork> ;
+    owl:someValuesFrom <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Assistance>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Assistance Dog"
+  ] .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#AttackDog>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Dog>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Attack Dog"
+  ] ;
+  owl:disjointWith <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#HuntingDog>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#WatchDog> .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Camouflage>
+  a owl:Class ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#consistOf> ;
+    owl:hasValue "Hidding"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Camouflage"
+  ] ;
+  owl:disjointWith <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Chasing>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Hunting>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Racing>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Security>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Sled>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Snow>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Tracking>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Weapon> .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Chasing>
+  a owl:Class ;
+  owl:equivalentClass <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Hunting>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Tracking> ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Chasing"
+  ] ;
+  owl:disjointWith <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Racing>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Security>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Sled>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Snow>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Weapon> .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Dog>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#DomesticatedMammal>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Pet>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Dog"
+  ] .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#DomesticatedAnimal>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Animal>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Domesticated Animal"
+  ] .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#DomesticatedMammal>
+  a owl:Class ;
+  owl:equivalentClass <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Pet> ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#DomesticatedAnimal>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Mammal>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Domesticated Mammal"
+  ] .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#FireArm>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Weapon>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Fire Arm"
+  ] .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#GermanShepherd>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#GuardDog>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#comesFrom> ;
+    owl:hasValue "Germany"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> ;
+    owl:hasValue "GermanShepherd"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> ;
+    owl:hasValue "germanShepherd"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> ;
+    owl:hasValue "germanshepherd"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Docile"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Faithful"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Playful"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Protective"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Tireless"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Vigilant"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasColor> ;
+    owl:hasValue "Black and Brown"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasColor> ;
+    owl:hasValue "Black and Fire"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "German Shepherd"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Athletic"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Harmonious"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Intelligent"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Robust"
+  ] ;
+  owl:disjointWith <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Rottweiler> .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#GoldenRetriever>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#AssistanceDog>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#GunDog>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#comesFrom> ;
+    owl:hasValue "England"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> ;
+    owl:hasValue "Golden"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> ;
+    owl:hasValue "GoldenRetriever"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> ;
+    owl:hasValue "Goldenretriever"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> ;
+    owl:hasValue "golden"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> ;
+    owl:hasValue "goldenRetriever"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> ;
+    owl:hasValue "goldenretriever"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Affectionate"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Calm"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Faithful"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Friendly"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Joyful"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Protective"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Sensitive"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Sweet"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasColor> ;
+    owl:hasValue "Dark Gold"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasColor> ;
+    owl:hasValue "White Cream"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Golden Retriever"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Elegant"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Intelligent"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Robust"
+  ] ;
+  owl:disjointWith <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#LabradorRetriever> .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#GuardDog>
+  a owl:Class ;
+  owl:equivalentClass <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#WatchDog> ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#WorkingDog>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#fieldOfWork> ;
+    owl:someValuesFrom <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Security>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Guard Dog"
+  ] .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#GunDog>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#HuntingDog>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Gun Dog"
+  ] ;
+  owl:disjointWith <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Hounds> .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#HomeSecurity>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Security>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Home Security"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#triggers> ;
+    owl:hasValue "Alarm"
+  ] .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Hounds>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#HuntingDog>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Hounds"
+  ] .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Hunting>
+  a owl:Class ;
+  owl:equivalentClass <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Tracking> ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Hunting"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#uses> ;
+    owl:hasValue "Smell"
+  ] ;
+  owl:disjointWith <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Racing>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Security>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Sled>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Snow>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Weapon> .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#HuntingDog>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Dog>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#fieldOfWork> ;
+    owl:someValuesFrom <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Chasing>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#fieldOfWork> ;
+    owl:someValuesFrom <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Hunting>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#fieldOfWork> ;
+    owl:someValuesFrom <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Tracking>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Hunting Dog"
+  ] .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Husky>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#SledDog>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#comesFrom> ;
+    owl:hasValue "Siberia"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> ;
+    owl:hasValue "husky"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Affectionate"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Faithful"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Independant"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Kind"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Husky"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Cold Resistant"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Elegant"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Heat Resistant"
+  ] ;
+  owl:disjointWith <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Malamute>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Samoyed> .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#LabradorRetriever>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#AssistanceDog>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#comesFrom> ;
+    owl:hasValue "Canada"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> ;
+    owl:hasValue "Labrador"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> ;
+    owl:hasValue "LabradorRetriever"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> ;
+    owl:hasValue "Labradorretriever"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> ;
+    owl:hasValue "labrador"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> ;
+    owl:hasValue "labradorRetriever"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> ;
+    owl:hasValue "labradorretriever"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Affectionate"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Ardent"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Docile"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Faithful"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Patient"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Player"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Sweet"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasColor> ;
+    owl:hasValue "Black"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasColor> ;
+    owl:hasValue "Chocolate"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasColor> ;
+    owl:hasValue "Yellow"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Labrador Retriever"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Intelligent"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Robust"
+  ] .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Lurcher>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Hounds>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#comesFrom> ;
+    owl:hasValue "Great Bretain"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#comesFrom> ;
+    owl:hasValue "Ireland"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> ;
+    owl:hasValue "lurcher"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Affectionate"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Faithful"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Lurcher"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Fast"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Intelligent"
+  ] ;
+  owl:disjointWith <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Podenco>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Whippet> .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Malamute>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#SledDog>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#comesFrom> ;
+    owl:hasValue "Alaska"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> ;
+    owl:hasValue "malamute"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Adorable"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Affectionate"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Faithful"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Malamute"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Cold Resistant"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Elegant"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Enduring"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Strong"
+  ] ;
+  owl:disjointWith <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Samoyed> .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Mammal>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Animal>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Mammal"
+  ] .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Pet>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#DomesticatedAnimal>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Mammal>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Pet"
+  ] .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Podenco>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Hounds>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#comesFrom> ;
+    owl:hasValue "Portugal"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#comesFrom> ;
+    owl:hasValue "Spain"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> ;
+    owl:hasValue "podenco"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Affectionate"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Faithful"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Lively"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Protective"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Podenco"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Courageous"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Intelligent"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Robust"
+  ] ;
+  owl:disjointWith <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Whippet> .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Racing>
+  a owl:Class ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#isA> ;
+    owl:someValuesFrom rdfs:Literal
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Racing"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#isA> ;
+    owl:hasValue "Sport"
+  ] ;
+  owl:disjointWith <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Security>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Sled>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Snow>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Tracking>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Weapon> .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Rottweiler>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#GuardDog>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#comesFrom> ;
+    owl:hasValue "Germany"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> ;
+    owl:hasValue "rottweiler"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Affectionate"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Curious"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Docile"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Playful"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Protective"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Tolerant"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasColor> ;
+    owl:hasValue "Black"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasColor> ;
+    owl:hasValue "Fire"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Rottweiler"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Brave"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Elegant"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Enduring"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Harmonious"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Intelligent"
+  ] .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Running>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Racing>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Running"
+  ] .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Samoyed>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#SledDog>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#comesFrom> ;
+    owl:hasValue "Siberia"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> ;
+    owl:hasValue "samoyed"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Affectionate"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Friendly"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Independant"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Joyful"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Sweet"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Samoyed"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Cold Resistant"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Elegant"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Enduring"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Strong"
+  ] .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Security>
+  a owl:Class ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Security"
+  ] ;
+  owl:disjointWith <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Sled>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Snow>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Tracking>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Weapon> .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#ServiceAnimal>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Dog>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Service Animal"
+  ] .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#ServiceDog>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#ServiceAnimal>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Service Dog"
+  ] .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Sled>
+  a owl:Class ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Sled"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Nordic"
+  ] ;
+  owl:disjointWith <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Snow>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Tracking>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Weapon> .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#SledDog>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#SnowDog>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#WorkingDog>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#does> ;
+    owl:someValuesFrom <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Running>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Sled Dog"
+  ] .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Snow>
+  a owl:Class ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#appearsIn> ;
+    owl:hasValue "Winter"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasColor> ;
+    owl:hasValue "White"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Snow"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasProperty> ;
+    owl:hasValue "Cold"
+  ] ;
+  owl:disjointWith <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Tracking>, <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Weapon> .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#SnowDog>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Dog>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#livesIn> ;
+    owl:someValuesFrom <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Snow>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Snow Dog"
+  ] .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Tracking>
+  a owl:Class ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Tracking"
+  ] ;
+  owl:disjointWith <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Weapon> .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#WatchDog>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#WorkingDog>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Watch Dog"
+  ] .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Weapon>
+  a owl:Class ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#usedFor> ;
+    owl:someValuesFrom <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Security>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Waepon"
+  ] .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Whippet>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Hounds>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#comesFrom> ;
+    owl:hasValue "England"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasAlternativeLabel> ;
+    owl:hasValue "whippet"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Affectionate"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Calm"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasCharacter> ;
+    owl:hasValue "Sensitive"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Whippet"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Elegant"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Fast"
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#is> ;
+    owl:hasValue "Intelligent"
+  ] .
+
+<http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#WorkingDog>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#Dog>, [
+    a owl:Restriction ;
+    owl:onProperty <http://www.semanticweb.org/david/ontologies/2022/3/doggOntology#hasLabel> ;
+    owl:hasValue "Working Dog"
+  ] .

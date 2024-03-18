@@ -1,0 +1,6 @@
+.DS_Store
+env/
+*.sql*
+*__pycache__/
+local_settings.py
+cache/*
